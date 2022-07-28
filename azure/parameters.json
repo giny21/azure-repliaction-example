@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "serverName": {
+            "value": "azure-backup"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "serverEdition": {
+            "value": "Burstable"
+        },
+        "vCores": {
+            "value": 1
+        },
+        "storageSizeGB": {
+            "value": 20
+        },
+        "haEnabled": {
+            "value": "Disabled"
+        },
+        "firewallRules": {
+            "value": {
+                "rules": [
+                    {
+                        "name": "AllowAll_2022-7-28_10-22-42",
+                        "startIPAddress": "0.0.0.0",
+                        "endIPAddress": "255.255.255.255"
+                    }
+                ]
+            }
+        },
+        "backupRetentionDays": {
+            "value": 7
+        },
+        "geoRedundantBackup": {
+            "value": "Disabled"
+        },
+        "availabilityZone": {
+            "value": ""
+        },
+        "vmName": {
+            "value": "Standard_B1ms"
+        },
+        "storageIops": {
+            "value": 360
+        },
+        "storageAutogrow": {
+            "value": "Enabled"
+        },
+        "standbyAvailabilityZone": {
+            "value": ""
+        },
+        "tags": {
+            "value": {}
+        },
+        "administratorLogin": {
+            "value": "azure_user"
+        },
+        "administratorLoginPassword": {
+            "value": null
+        },
+        "version": {
+            "value": "5.7"
+        }
+    }
+}

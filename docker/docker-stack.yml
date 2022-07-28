@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+
+  database:
+    container_name: ${DATABASE_HOST} #Nazwa kontenera
+    image: mariadb:latest #Obraz z którego skorzystamy
+    environment: #zmienne środowiskowe
+      - MYSQL_REPLICATION_USER=${DATABASE_REPLICATION_USER}
+      - MYSQL_REPLICATION_PASSWORD=${DATABASE_REPLICATION_PASSWORD}
+      - MYSQL_ROOT_USER=${DATABASE_ROOT_USER}
+      - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}
+    ports: #przekierowanie portów
+      - 13306:3306
+    volumes: #podczepione pliki konfiguracyjne
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+      - ./mysql/init.sh:/docker-entrypoint-initdb.d/init.sh:ro
